@@ -1,0 +1,26 @@
+CREATE TABLE store(id INTEGER PRIMARY KEY, item TEXT, price INTEGER, quantity INTEGER, brand TEXT);
+INSERT INTO store 
+VALUES(1, "bananas", 3.99, 200, "Chiquita"),
+(2, "chicken breast", 7.99, 100, "Kirkland"),
+(3, "apples", 4.50, 15, "Gala"),
+(4, "milk", 4.21, 40, "Kirkland"),
+(5, "pasta", 0.99, 60, "Barilla"),
+(6, "vodka sauce", 7.99, 70, "Rao's"),
+(7, "marinara sauce", 5.99, 75, "Bertolli"),
+(8, "apple cider", 6.23, 34, "Musselman's"),
+(9, "lettuce", 1.99, 55, "Green Giant"),
+(10, "carrots", 0.99, 60, "Green Giant"),
+(11, "bread crumbs", 1.50, 87, "Panko"),
+(12, "butter", 4.99, 124, "Land O Lakes"),
+(13, "baby formula", 17.26, 105, "Enfamil"),
+(14, "turkey", 3.10, 45, "Bell & Evans"),
+(15, "stuffing", 4.99, 96, "Stove Top");
+
+-- Display database ordered by price
+SELECT * FROM store ORDER BY price;
+
+--Display price of a full shopping cart of said items
+SELECT SUM(price) From store;
+
+--Display wholesale value of store inventory for said items
+SELECT ROUND(SUM(price*Quantity)) From store;
